@@ -51,7 +51,6 @@ export class SBDWAccessory extends BaseAccessory{
       uniqueId: device.uniqueId,
       code: device.code,
       contactSensorState: device.payload['window:0'].open ? characteristic.ContactSensorState.CONTACT_NOT_DETECTED : characteristic.ContactSensorState.CONTACT_DETECTED,
-      illuminance: device.payload['illuminance:0'].lux,
       // eslint-disable-next-line max-len
       statusLowBattery: device.payload['devicepower:0'].battery.percent < 10 ? characteristic.StatusLowBattery.BATTERY_LEVEL_LOW : characteristic.StatusLowBattery.BATTERY_LEVEL_NORMAL,
     };
@@ -60,11 +59,6 @@ export class SBDWAccessory extends BaseAccessory{
     const primaryService = this._platformAccessory.getService(this.platform.Service.ContactSensor) ||
           this._platformAccessory.addService(this.platform.Service.ContactSensor);
     primaryService.getCharacteristic(this.platform.Characteristic.ContactSensorState).setValue(_device.contactSensorState);
-    primaryService.getCharacteristic(this.platform.Characteristic.StatusLowBattery).setValue(_device.statusLowBattery);
-
-    const lightSensor = this._platformAccessory.getService(this.platform.Service.LightSensor) ||
-      this._platformAccessory.addService(this.platform.Service.LightSensor, `${_device.code} Light Sensor`, `${_device.uniqueId}-light-sensor`);
-    lightSensor.getCharacteristic(this.platform.Characteristic.CurrentAmbientLightLevel).setValue(_device.illuminance);
     primaryService.getCharacteristic(this.platform.Characteristic.StatusLowBattery).setValue(_device.statusLowBattery);
 
   }
