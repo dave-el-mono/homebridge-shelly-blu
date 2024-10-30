@@ -1,15 +1,15 @@
 {
   "displayName": "Shelly Blu Plugin",
   "name": "homebridge-shelly-blu",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Homebridge plugin for the Shelly BLU devices.",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maintux/homebridge-shelly-blu.git"
+    "url": "https://github.com/dave-el-mono/homebridge-shelly-blu.git"
   },
   "bugs": {
-    "url": "https://github.com/maintux/homebridge-shelly-blu/issues"
+    "url": "https://github.com/dave-el-mono/homebridge-shelly-blu/issues"
   },
   "engines": {
     "node": "^20.5.0",
