@@ -11,7 +11,7 @@
   ],
   "require": {
     "type": "git",
-    "url": "https://github.com/maintux/homebridge-shelly-blu.git": "dev-master"
+    "https://github.com/maintux/homebridge-shelly-blu.git": "dev-master"
   }
   "bugs": {
     "url": "https://github.com/dave-el-mono/homebridge-shelly-blu/issues"
