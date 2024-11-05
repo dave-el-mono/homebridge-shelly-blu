@@ -38,7 +38,7 @@ export default class ShellyCloudApi {
   private _getAuthCode = async (): Promise<void> => {
     if(!this._authCode) {
       const params = new URLSearchParams();
-      const hash = createHash('sha1');
+      const hash = createHash('sha256');
       hash.update(this._config.password);
       params.append('email', this._config.email);
       params.append('password', hash.digest('hex'));
